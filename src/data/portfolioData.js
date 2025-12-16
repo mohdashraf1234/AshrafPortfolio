@@ -106,13 +106,13 @@ export const experienceData = [
 
 export const projectImageAssets = {
     certificates: [
-        "/images/LearnbayCertificate.jpg",
-        "/images/JavaTrainingCertificate.jpg",
+        "./images/LearnbayCertificate.jpg",
+        "./images/JavaTrainingCertificate.jpg",
     ],
     companyLogos: [
-        "/images/Star_Pic.JPG",
-        "/images/imageinfo.jpg",
-        "/images/star3.jpg",
+        "./images/Star_Pic.JPG",
+        "./images/imageinfo.jpg",
+        "./images/star3.jpg",
     ]
 }
 
