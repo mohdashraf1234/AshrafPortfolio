@@ -120,10 +120,10 @@ export const projectImageAssets = {
 export const projectsData = [
     {
         title: "Cloud-based Contact Application",
-        image: "/images/ContactProject.png",
+        image: "./images/ContactProject.png",
         description: "A scalable cloud-hosted contact management system with user authentication, role-based access control, real-time database synchronization, and Razorpay payment integration.",
         techs: ["Java", "Spring Boot", "MySQL", "REST API"],
-        demoLink: "/images/ContactProject1.mp4", 
+        demoLink: "./images/ContactProject1.mp4", 
         codeLink: "https://github.com/mohdashraf1234/CloudContactBaseContactSystemApplication"
     },
     {
@@ -131,12 +131,12 @@ export const projectsData = [
         image: "/images/chatapp2.jpg",
         description: "A full-stack real-time messaging platform featuring instant messaging, audio calling, file sharing, and user presence indicators with secure WebSocket communication and WebRTC integration.",
         techs: ["Java", "Spring Boot", "WebSocket", "REST API"],
-        demoLink: "/images/ContactProject1.mp4",
+        demoLink: "./images/ContactProject1.mp4",
         codeLink: "https://github.com/mohdashraf1234/ChatApplication"
     },
     {
         title: "Music System",
-        image: "/images/MusicSystemBC.jpg",
+        image: "./images/MusicSystemBC.jpg",
         description: "A responsive online music player where users can enjoy songs, create playlists, adjust equalizers, and toggle between light/dark themes.",
         techs: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
         demoLink: "https://mohdashraf1234.github.io/MusicSystemByAshraf/",
@@ -144,7 +144,7 @@ export const projectsData = [
     },
     {
         title: "Student Info Report",
-        image: "/images/studentInfo.jpeg",
+        image: "./images/studentInfo.jpeg",
         description: "A Spring Boot based web application to generate information forms and reports dynamically with PDF generation using JasperReports.",
         techs: ["Java", "Spring Boot", "Thymeleaf", "JasperReports"],
         demoLink: "./images/StudentReport%20Video%20(online-video-cutter.com).mp4", 
@@ -152,7 +152,7 @@ export const projectsData = [
     },
     {
         title: "Snake Game",
-        image: "/images/SnakeGame.png",
+        image: "./images/SnakeGame.png",
         description: "A fun and interactive snake game with increasing difficulty levels, score tracking, and responsive controls for both desktop and mobile devices.",
         techs: ["HTML5", "CSS3", "JavaScript"],
         demoLink: "https://mohdashraf1234.github.io/SnakeG", 
@@ -160,15 +160,15 @@ export const projectsData = [
     },
     {
         title: "Task Management",
-        image: "/images/TaskM.png",
+        image: "./images/TaskM.png",
         description: "A task management web application that enables users to add, edit, and track tasks with deadlines, priorities, and categories.",
         techs: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
-        demoLink: "/images/TMS.mp4", 
+        demoLink: "./images/TMS.mp4", 
         codeLink: "https://github.com/mohdashraf1234/TaskManagmentSystem"
     },
     {
         title: "Flipkart Clone",
-        image: "/images/FlipKartClone.png",
+        image: "./images/FlipKartClone.png",
         description: "A front-end of Flipkart clone featuring product listing, search, shopping cart, authentication, and order management.",
         techs: ["HTML5", "CSS3", "JavaScript"],
         demoLink: "https://mohdashraf1234.github.io/FlipKartCloneByAshraf/", 
@@ -176,7 +176,7 @@ export const projectsData = [
     },
     {
         title: "3D Calculator",
-        image: "/images/Calculator.png",
+        image: "./images/Calculator.png",
         description: "A visually appealing 3D styled calculator built with CSS animations and JavaScript. Supports all basic arithmetic operations with an engaging interactive UI.",
         techs: ["HTML5", "CSS3", "JavaScript"],
         demoLink: "https://mohdashraf1234.github.io/Calculator/", 
@@ -184,7 +184,7 @@ export const projectsData = [
     },
     {
         title: "TODO List",
-        image: "/images/todolist.png",
+        image: "./images/todolist.png",
         description: "A responsive and interactive To-Do List web application. Users can add, edit, mark as complete, and delete tasks. The app stores tasks in local storage for persistence.",
         techs: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
         demoLink: "https://mohdashraf1234.github.io/TODO-List1/", 
@@ -192,7 +192,7 @@ export const projectsData = [
     },
     {
         title: "Alarm Clock",
-        image: "/images/DigitalClock.png",
+        image: "./images/DigitalClock.png",
         description: "A responsive and interactive Digital Clock web application with three modes: Live clock display, alarm functionality, and countdown timer with notifications.",
         techs: ["HTML5", "CSS3", "JavaScript"],
         demoLink: "https://mohdashraf1234.github.io/Digital-clock/", 
