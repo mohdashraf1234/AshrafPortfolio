@@ -1,0 +1,849 @@
+/* =========================================================================
+   1. VARIABLES & BASE STYLES
+========================================================================= */
+
+:root, .dark {
+    /* Color Palette (Deep Ocean/Tech Theme - Your Preferred Dark Theme) */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-background: #1a1a2e;
+    --color-card-bg: #2c2c48;
+    --color-text-light: #e0e0f8;
+    --color-text-dark: #333333; 
+    --color-accent: #00f0ff;
+    
+    /* Other Variables */
+    --font-family-primary: 'Poppins', sans-serif; /* 🚨 UPDATED FONT */
+    --font-size-base: 16px;
+    --spacing-unit: 1rem;
+    --border-radius: 8px;
+    --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- LIGHT THEME Overrides (IMPROVED CONTRAST) 🚨 FIXED SECTION --- */
+/* --- LIGHT THEME Overrides (For the button click) --- */
+.light {
+    --color-primary: #007bff;
+    --color-secondary: #606060;
+    --color-background: #fcfcfc;
+    --color-card-bg: #ffffff; 
+    --color-text-light: #333333; 
+    --color-text-dark: #fcfcfc;
+    --color-accent: #009688;
+    --color-border: #e0e0e0;
+    --color-input-bg: #f0f0f0; 
+    --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-background); 
+    color: var(--color-text-light); 
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-top: 60px;
+}
+
+/* Typography */
+/* 🚨 FIX: Must use var(--color-text-light) for headings too */
+h1, h2, h3 {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-unit);
+    font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    color: var(--color-primary);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+/* =========================================================================
+   2. HEADER & NAVIGATION
+========================================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-card-bg); /* Use card background for header */
+    box-shadow: var(--shadow-dark);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-accent);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 20px;
+    padding: 0.5rem 0;
+    color: var(--color-text-light);
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================================================
+   3. BUTTONS & FORMS
+========================================================================= */
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.button.primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.button.secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+
+/* Form Styling */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    /* 🚨 DARK THEME DEFAULT STYLES */
+    background-color: #3e3e5c; 
+    color: var(--color-text-light);
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* 🚨 LIGHT THEME CONTACT FORM FIX */
+.light .contact-form input[type="text"],
+.light .contact-form input[type="email"],
+.light .contact-form textarea {
+    background-color: var(--color-input-bg); /* Use light gray input background */
+    border: 1px solid var(--color-border);
+    color: var(--color-text-light); /* Ensure text is dark */
+}
+
+
+/* =========================================================================
+   4. HOME SECTION (HERO)
+========================================================================= */
+
+.hero-section {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    background-color: var(--color-background);
+}
+.hero-social-links {
+    display: flex;
+    justify-content: center; /* Ensure they are centered */
+    gap: 1.5rem;
+    /* 🚨 FIX: Increase margin-top to create more space below the buttons */
+    margin-top: 3rem; 
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-accent);
+    box-shadow: var(--shadow-dark);
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.hero-section h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    /* margin-bottom: 2rem; 🚨 Removed default h2 margin, now controlled by .typed-text-container */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* =========================================================================
+   5. ABOUT ME SECTION
+========================================================================= */
+
+.about-section {
+    background-color: var(--color-card-bg);
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+/* =========================================================================
+   6. SKILLS SECTION
+========================================================================= */
+
+.skills-section {
+    background-color: var(--color-background);
+}
+
+/* 🚨 OLD/DEFAULT skills-grid - OVERRIDDEN BY NEW STYLES BELOW */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-item {
+    /* ... existing skill-item styles ... */
+    background-color: var(--color-card-bg);
+    color: var(--color-accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-primary);
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.skill-item:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark);
+}
+
+/* =========================================================================
+   7. EXPERIENCE SECTION (TIMELINE)
+========================================================================= */
+
+.experience-section {
+    background-color: var(--color-card-bg);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--color-primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-dark);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--color-accent);
+    border: 4px solid var(--color-primary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Style items on the left side */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Style items on the right side */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.job-title {
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+.company-info {
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+.duration {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================================
+   8. PROJECTS SECTION
+========================================================================= */
+
+.projects-section {
+    background-color: var(--color-background);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-dark);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    color: var(--color-accent);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 🚨 LIGHT THEME PROJECT BADGE FIX (Default is for Dark) */
+.tech-badge {
+    background-color: #003a74;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+.light .tech-badge {
+    background-color: var(--color-primary); /* Use primary blue in light theme */
+    color: white;
+}
+
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.link-button {
+    flex-grow: 1;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* =========================================================================
+   9. CONTACT SECTION
+========================================================================= */
+
+.contact-section {
+    background-color: var(--color-card-bg);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dark);
+    padding: 2rem;
+}
+
+.contact-info h3 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.info-item strong {
+    color: var(--color-accent);
+    display: block;
+    font-size: 0.9rem;
+}
+
+.copy-button {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    width: auto;
+}
+
+/* =========================================================================
+   10. FOOTER
+========================================================================= */
+
+.footer {
+    background-color: var(--color-card-bg);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+/* =========================================================================
+   11. MEDIA QUERIES (Responsiveness)
+========================================================================= */
+
+@media (max-width: 992px) {
+    /* Adjustments for Tablets */
+    .timeline::after {
+        left: 20px; /* Move vertical line to the left */
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        left: 0 !important;
+    }
+    
+    .timeline-item::after {
+        left: 14px !important;
+        right: auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for Mobile Devices */
+    
+    body {
+        padding-top: 50px;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .navbar {
+        padding: 0.75rem 5%;
+    }
+
+    .nav-menu {
+        display: none; /* Hide standard menu when it does NOT have the 'active' class */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-card-bg);
+        box-shadow: var(--shadow-dark);
+        padding: 1rem 0;
+        text-align: center;
+        /* Add transition for a smooth slide-down effect (optional but nice) */
+        transition: all 0.3s ease-in-out; 
+        opacity: 0; /* Start hidden */
+        pointer-events: none;
+    }
+
+    /* 🟢 THE FIX IS HERE: SHOW the menu when the 'active' class is present */
+    .nav-menu.active { 
+        display: flex; 
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+        border-bottom: 1px solid #333;
+    }
+    
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack contact form and info */
+    }
+}
+
+
+/* =========================================================================
+   12. EXPERIENCE IMAGES STYLES
+========================================================================= */
+
+.subsection-title {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--color-accent);
+}
+
+.certificates-grid, .logos-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.certificate-img {
+    width: 100%;
+    max-width: 400px; /* Limit size for certificates */
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dark);
+    border: 3px solid var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+/* 🚨 LIGHT THEME LOGO BACKGROUND FIX (Need to change light theme background) */
+.company-logo-img {
+    width: 100%;
+    max-width: 250px; /* Limit size for logos */
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dark);
+    object-fit: contain;
+    padding: 1rem;
+    background-color: white; /* Default: White is usually fine in Dark theme context */
+}
+.light .company-logo-img {
+    background-color: var(--color-input-bg); /* Use a soft light gray in light theme */
+}
+
+
+/* Hover effect */
+.certificate-img:hover, .company-logo-img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .certificates-grid, .logos-grid {
+        gap: 1rem;
+    }
+    .certificate-img, .company-logo-img {
+        max-width: 90%; 
+    }
+}
+
+
+
+/* =========================================================================
+   14. FOOTER SOCIAL STYLES
+========================================================================= */
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-link {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social-link:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px) scale(1.1);
+}
+
+
+
+/* =========================================================================
+   15. THEME TOGGLE STYLES
+========================================================================= */
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-card-bg); /* Use the card background as the text color on hover */
+}
+
+/* Ensure the toggle is visible on mobile next to the menu */
+@media (max-width: 768px) {
+    .header-controls {
+        /* This ensures controls are visible on mobile */
+        display: flex; 
+    }
+}
+
+/* =========================================================================
+   16. SKILLS SECTION IMPROVEMENTS (Icons and Grid) 🚨 NEW STYLES
+========================================================================= */
+
+.skill-group {
+    margin-bottom: 3rem;
+}
+
+/* 🚨 REPLACING OLD skills-grid definition */
+.skills-grid {
+    display: grid;
+    /* Use 3 columns on desktop, 2 on medium, 1 on small */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-primary); 
+    background-color: var(--color-card-bg);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    font-weight: 600;
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+    color: var(--color-accent); 
+    transition: color 0.3s;
+}
+
+/* Hover Polish */
+.skill-item:hover {
+    background-color: var(--color-primary);
+    color: white; /* Text turns white */
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+.skill-item:hover .skill-icon {
+    color: white; /* Icon turns white */
+}
+
+/* =========================================================================
+   17. TYPED EFFECT STYLES (For Home.jsx) 🚨 NEW STYLES
+========================================================================= */
+
+/* Contains both static text and the typed output */
+.typed-text-container {
+    height: 2rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem; 
+    color: var(--color-text-light); 
+    margin-bottom: 2rem;
+    white-space: nowrap; 
+}
+
+/* The dynamic text being typed */
+/* NOTE: Typed.js adds the class 'typed-text' to the element, but we use .typed-text-output */
+.typed-text-output { 
+    font-weight: 700;
+    color: var(--color-primary); /* Use Primary color for high contrast */
+    margin-left: 0.5rem;
+}
+
+
+/* Responsive adjustment for small screens */
+@media (max-width: 600px) {
+    .typed-text-container {
+        font-size: 1.2rem;
+        /* Allow wrap on very small screens to prevent overflow */
+        white-space: normal; 
+        height: auto; 
+        flex-direction: column;
+        line-height: 1.2;
+    }
+    .typed-text-output {
+        display: block; /* Force the typed text onto its own line */
+        margin-left: 0;
+    }
+    /* Removed .typed-text-cursor CSS, as it's now handled by the typed.js library's default class */
+}
