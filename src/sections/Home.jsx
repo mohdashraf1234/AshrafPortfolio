@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 // 🚨 FIXED: Combined imports into a single line
 import { personalInfo, socialLinks } from '../data/portfolioData'; 
+import profileImage from '../assets/AshrafImg.jpg';
 
 const Home = () => {
     // 1. Create a Ref to attach to the span element
