@@ -7,7 +7,7 @@ export const personalInfo = {
     phone: "+91 9721403673",
     location: "Noida, Uttar Pradesh",
     cvLink: "./images/AshrafResume 1512.pdf", 
-    profileImg: "./images/AshrafImg.jpg", // Path relative to the 'public' folder
+    profileImg: <img src="./images/AshrafImg.jpg" alt="Profile Picture of Mohd Ashraf" />
 };
 
 export const socialLinks = [
