@@ -128,7 +128,7 @@ export const projectsData = [
     },
     {
         title: "Chat Application",
-        image: "/images/chatapp2.jpg",
+        image: "./images/chatapp2.jpg",
         description: "A full-stack real-time messaging platform featuring instant messaging, audio calling, file sharing, and user presence indicators with secure WebSocket communication and WebRTC integration.",
         techs: ["Java", "Spring Boot", "WebSocket", "REST API"],
         demoLink: "./images/ContactProject1.mp4",
