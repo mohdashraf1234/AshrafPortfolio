@@ -6,7 +6,7 @@ export const personalInfo = {
     email: "mohd36089@gmail.com",
     phone: "+91 9721403673",
     location: "Noida, Uttar Pradesh",
-    cvLink: "./images/AshrafResume 1512.pdf", 
+    cvLink: "./images/AshrafResume1712.pdf", 
     profileImg: "./images/AshrafImg.jpg"
 };
 
